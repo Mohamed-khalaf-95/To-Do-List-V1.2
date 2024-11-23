@@ -1,0 +1,240 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+}
+body {
+  text-align: center;
+  font-family: sans-serif;
+}
+h1 {
+  padding: 20px;
+  background-color: #0075ff;
+  color: white;
+}
+form {
+  padding: 25px 0;
+  padding: 40px 15px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+}
+
+.add-task {
+  padding: 14px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  background-color: #9ebaf34b;
+  width: 100%;
+}
+@media(min-width:992px){
+  .add-task {
+    max-width: calc(648px - 168px);
+  }
+}
+.add-task:focus {
+  outline: 2px solid #0075ff;
+}
+
+.add-btn {
+  padding: 14px 60px;
+  /* border-radius: 5px;+ */
+  font-size: 20px;
+  border: none;
+  background-color: #0075ff;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+.add-btn::before,
+.add-btn::after{
+  content: "";
+  background-color: #009688;
+  position: absolute;
+  height: 50%;
+  width: 0%;
+  transition: .3s linear;
+  z-index: -1;
+}
+.add-btn::before{
+  top: 0;
+  left: 0;
+}
+.add-btn::after{
+  bottom:0;
+  right: 0;
+}
+.add-btn:hover::before,
+.add-btn:hover:after{
+width: 100%;
+}
+@media (max-width: 767px) {
+  form {
+    flex-direction: column;
+  }
+  .add-task {
+    width: 100%;
+  }
+  .add-btn {
+    width: 100%;
+  }
+}
+.my-tasks {
+  margin: 0 auto;
+  /* background-color: #0075ff; */
+  background-color: #ddd;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 15px;
+  gap: 20px;
+}
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0075ff;
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+.task .task-info {
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 19px;
+  padding: 10px 10px;
+  border-radius: 5px;
+ word-wrap: break-word;
+ min-width: 300px;
+ max-width: 400px;
+ text-align: left;
+}
+.task .task-info:focus{
+  outline: none;
+  border: solid 2px white;
+}
+@media (max-width: 767px) {
+  .task {
+    width: 100%;
+    border-radius: 0;
+  flex-direction: column;
+  }
+  .task .task-info {
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: center;
+    border-radius: 0;
+  }
+  .btn-container{
+    padding: 15px;
+  }
+}
+.del-btn,
+.edit-btn,
+.done {
+  margin-left: 20px;
+}
+.del-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  font-size: 19px;
+  padding: 5px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.edit-btn,
+.done {
+  background-color: #009688;
+  color: white;
+  border: none;
+  font-size: 19px;
+  padding: 5px 0px;
+  width: 100px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color .3s linear;
+}
+.edit-btn:hover,
+.done:hover{
+  background-color: white;
+  color: black;
+}
+/* popup */
+.main-popup {
+    width: 60%;
+    height: 300px;
+    text-align: center;
+    background-color: #0075ff;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s linear;
+    z-index: 1;
+    opacity: 0;
+    border-radius: 5px;
+  }
+  .close-btn {
+    width: 100px;
+    height: 40px;
+    border: none;
+    background-color: #009688;
+    margin-top: 30px;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s linear;
+    order: 1;
+  }
+  .close-btn:hover {
+    background-color: white;
+    color: #0075ff;
+  }
+  .title {
+    margin-bottom: 20px;
+    font-size: 25px;
+  }
+  .content {
+    font-size: 20px;
+  }
+  .over-lay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(0 0 0 / 50%);
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    opacity: 0;
+    
+  }
+  footer{
+    background-color: #0075ff;
+    color: white;
+    font-size: 17px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1.2px;
+  }
+  footer :last-child{
+    font-size: 15px;
+  }
